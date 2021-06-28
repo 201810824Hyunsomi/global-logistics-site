@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container mb-3">
+
+      <div class="jumbotron">
+		<h2 class="mb-3">기관 소개</h2>
+    <table class="board-table table table-sm border-bottom">
+
+      <thead class="thead-light">
+        <tr>
+          <th class="name">기관</th>
+          <th class="detail"> </th>
+        </tr>
+      </thead>
+      <% agencys.forEach(function(agencys) { %>
+      <tbody>
+          <tr>
+            <td class="name"><%= agencys.name %></td>
+            <td class="detail">
+            <details>
+              <!-- <summary>Click Me!!!</summary> -->
+              <div class="tpt"><%= agencys.detail %>
+                <a href="<%= agencys.link %>">사이트 바로가기</a>
+            </div>
+            </details>
+          </td>
+            </tr>
+            <% }) %>
+          </table>
+        </div>
+      </div>
+    </body>
+ </html>
